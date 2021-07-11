@@ -32,7 +32,7 @@ def main(msg: func.ServiceBusMessage):
         for row in attendees:
             client = SendGridAPIClient(os.environ["SendGridAPIKey"])
             message = Mail(
-                from_email=os.environ["from-mail"],
+                from_email=os.environ["fromMail"],
                 to_emails= row[2],
                 subject= notification[1],
                 html_content= notification[0])
