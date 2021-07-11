@@ -72,8 +72,8 @@ def notification():
             ## Code below will be replaced by a message queue
             #################################################
 
-            notification_id = notification.id
-            message = Message(str(notification_id))
+            notificationObject = Notification.query.order_by(Notification.id.desc()).first()
+            message = Message(str(notificationObject.id))
             # send the message to the queue
             queue_client.send_messages(message)
 
