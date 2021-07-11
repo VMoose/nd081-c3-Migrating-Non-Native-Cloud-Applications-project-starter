@@ -65,7 +65,7 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 | ------------ | ------------ | ------------ |
 | *Azure Postgres Database* |  Singe Server-Basic (1vCore, 5GB)  |    Rs. 1900          |
 | *Azure Service Bus*   |    Basic     |      Rs 3.6/million operation        |
-| *Azure Web App|         |   Basic           | Free
+| *Azure Web App*        |   Basic           | Free
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
