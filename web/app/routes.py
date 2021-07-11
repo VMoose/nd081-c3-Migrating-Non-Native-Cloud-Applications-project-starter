@@ -67,8 +67,8 @@ def notification():
             db.session.add(notification)
             db.session.commit()
 
-            id = Notification.query.order_by(Notification.id.desc()).first()
-            message = ServiceBusMessage(id)
+            notificationObject = Notification.query.order_by(Notification.id.desc()).first()
+            message = ServiceBusMessage(str(notificationObject.id))
             # send the message to the queue
             queue_client.send_messages(message)
             ##################################################

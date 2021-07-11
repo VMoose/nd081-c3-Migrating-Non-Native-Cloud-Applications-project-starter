@@ -7,7 +7,6 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
 def main(msg: func.ServiceBusMessage):
-
     notification_id = int(msg.get_body().decode('utf-8'))
     logging.info('Python ServiceBus queue trigger processed message: %s',notification_id)
     conn = psycopg2.connect(
