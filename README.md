@@ -63,9 +63,26 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* |  Singe Server-Basic (1vCore, 5GB)  |    Rs. 1900          |
+| *Azure Service Bus*   |    Basic     |      Rs 3.6/million operation        |
+| *Azure Web App|         |   Basic           | Free
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+
+### App Service
+    * Our application is a lightweight application and doesn't need high performance compute services.
+    * App services are less costly in general
+    * Deployment on App service is less complicated t
+    * Scaling the application is easier and hardware limitations is not a factor to be considered.
+    * No need to upgrade any software/OS.
+
+### Azure Functions
+    * Azure functions are best suited for smaller apps have events that can work independently of other websites
+    * Sending emails and changing notifications tasks are background events. Not directly related to the main application.
+    * Compute on demand. Run only when notifications are triggered.
+    * Short work and does not have lot of complex logic.
+    * Workflow can be triggered using Service bus queue making it async flow to the main application
+
+
+
